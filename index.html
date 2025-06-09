@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Pratham Shakya | Musician</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Reset and basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/handmade-paper.png') repeat;
+      background-color: #fdf6e3;
+      color: #000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+    }
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+      color: #000;
+      word-break: break-word;
+    }
+    .tagline {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-weight: 300;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 1rem;
+      word-break: break-word;
+    }
+    p {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    /* Icon styles */
+    .contact-icons a {
+      display: inline-block;
+      color: #000;
+      margin: 0 10px;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      text-decoration: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+      position: relative;
+      touch-action: manipulation; /* better on mobile */
+    }
+
+    .contact-icons a:hover,
+    .contact-icons a:focus {
+      color: #e1306c;
+      animation: icon-hover 0.6s ease forwards;
+      outline: none;
+    }
+
+    /* Hover wiggle effect */
+    @keyframes icon-hover {
+      0% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.1) rotate(-5deg); }
+      50% { transform: scale(1.15) rotate(5deg); }
+      100% { transform: scale(1.1) rotate(0deg); }
+    }
+
+    /* Click burst effect */
+    .contact-icons a.clicked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: rgba(225, 48, 108, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: burst 0.5s ease-out;
+      z-index: -1;
+    }
+
+    @keyframes burst {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.6;
+      }
+      50% {
+        width: 80px;
+        height: 80px;
+        opacity: 0.3;
+      }
+      100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+      }
+    }
+
+    /* Hide the YouTube player */
+    #player {
+      display: none;
+    }
+
+    /* Style the mute/unmute button */
+    #muteToggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff69b4; /* pink */
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #muteToggle:hover,
+    #muteToggle:focus {
+      background-color: #e1306c;
+      outline: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      section {
+        padding: 2rem 1rem;
+      }
+      .contact-icons a {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Pratham Shakya</h1>
+      <p class="tagline">Singer | Songwriter | Producer</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I'm Pratham Shakya, a musician from Nepal who enjoys fusing traditional and contemporary sounds. I write music in a variety of genres, including rap, EDM, indie pop, and more, and I always use my songs to share personal tales.</p>
+  </section>
+
+  <section>
+    <h2>Music Portfolio</h2>
+    <div class="contact-icons" aria-label="YouTube Link">
+      <a href="https://youtube.com/@pratham_2024?si=cPFjz2jgITqafd9S" target="_blank" aria-label="YouTube Channel" rel="noopener noreferrer">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-icons" aria-label="Contact Links">
+      <a href="mailto:shakyapratham1@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/_pratham_shakya?igsh=NzZ0OHp3aGlobnFz" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1G9vGyPyBB/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+    </div>
+  </section>
+
+  <!-- YouTube Player Div -->
+  <div id="player"></div>
+  <!-- Mute/Unmute Button -->
+  <button id="muteToggle" aria-pressed="false" aria-label="Toggle sound on/off">Unmute 🔈</button>
+
+  <script>
+    // Add burst effect on click for social icons
+    const icons = document.querySelectorAll('.contact-icons a');
+    icons.forEach(icon => {
+      icon.addEventListener('click', () => {
+        icon.classList.remove('clicked'); // reset if already clicked
+        void icon.offsetWidth; // force reflow (restarts animation)
+        icon.classList.add('clicked');
+      });
+    });
+
+    // Load YouTube IFrame API script
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+
+    var player;
+    var isMuted = true;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '0',
+        width: '0',
+        videoId: 'Uq0LNHQVdY8',  // Your video ID
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          loop: 1,
+          playlist: 'Uq0LNHQVdY8',  // needed for loop
+          mute: 1,  // start muted for autoplay to work
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0,
+          fs: 0
+        },
+        events: {
+          'onReady': function(event) {
+            event.target.playVideo();
+          }
+        }
+      });
+    }
+
+    // Mute/Unmute button logic
+    const muteToggle = document.getElementById('muteToggle');
+    muteToggle.addEventListener('click', () => {
+      if (isMuted) {
+        player.unMute();
+        muteToggle.textContent = 'Mute 🔇';
+        muteToggle.setAttribute('aria-pressed', 'true');
+        isMuted = false;
+      } else {
+        player.mute();
+        muteToggle.textContent = 'Unmute 🔈';
+        muteToggle.setAttribute('aria-pressed', 'false');
+        isMuted = true;
+      }
+    });
+  </script>
+</body>
+</html>
